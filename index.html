@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript</title>
+</head>
+<body>
+
+
+ <script>
+	
+	function myFunction(){
+		var fname=document.getElementById("fname");
+		var pass=document.getElementById("pass");
+		
+		if(fname.value.trim()==""){
+		
+			fname.style.border=" solid 3px red";
+			document.getElementById("lblname").style.visibility="visible";
+			return false;
+		}
+		/*else if(pass.value.trim()==""){
+		
+			pass.style.border=" solid 3px red";
+			document.getElementById("lblpass").style.visibility="visible";
+			return false;
+		}
+		*/
+		
+		else if(pass.value.trim().length<5){
+		
+			pass.style.border=" solid 3px red";
+			document.getElementById("lblpass").style.visibility="visible";
+			return false;
+		}
+		
+		else{
+			true;
+		}
+	
+	}
+</script>
+<form action="home.html" onsubmit=" return myFunction();">
+
+<input type="text" id="fname" placeholder="Enter First Name"/>
+<label id="lblname" style="color:red; visibility:hidden;">Invalid User Name</label>
+<br><br>
+<input type="password" id="pass" placeholder="Enter password"/>
+<label id="lblpass" style="color:red; visibility:hidden;">Invalid password & too short</label>
+
+<br><br>
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
